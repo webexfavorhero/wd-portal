@@ -1,0 +1,19 @@
+<h1><%= @plan["title"] %></h1>
+<%= raw ap(@plan) %>
+<% @upgrades.each do |upgrade| %>
+	<div>
+		<h3><%= upgrade["pug_name"] %></h3>
+		<strong><%= upgrade["pu_name"] %></strong>
+		<div class="options">
+			<% upgrade["options"].values.each do |option| %>
+			<div class="option">
+				<%= option["po_description"] %> (<%= option["pricing"]["1"]["price"] %>/mo)
+			</div>
+			<% end %>
+		</div>
+	</div>
+	<hr>
+<% end %>
+<p><strong>Price:</strong> <%= @plan["price"] %></p>
+<hr/>
+<%= raw ap(@upgrades) %>

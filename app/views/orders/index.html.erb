@@ -1,0 +1,4 @@
+<% @services.each do |service| %>
+	<%= link_to service["title"], order_path(service["plan_id"]) %>
+	<br />
+<% end %>
